@@ -3,7 +3,7 @@ labelPRBasedOnFilePath:
     - korean/**/*
   "한글: 띄어쓰기 및 콜론 테스트":
     - space/**/*
-  "이모지 있는":
+  "📄 이모지 있는 버전":
     - emoji/**/*
   "이모지 없는":
     - emoji/**/*
