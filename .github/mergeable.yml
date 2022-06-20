@@ -15,10 +15,10 @@ mergeable:
         must_exclude:
           regex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test):\s.+\s\[[A-Z]+-[0-9]+\]$'
     pass:
-      - do: check
+      - do: checks
         status: 'success'
     fail:
-      - do: check
+      - do: checks
         status: 'failure'
         payload:
           title: 'Make sure this PR title follows convention.'
