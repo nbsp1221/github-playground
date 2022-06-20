@@ -12,7 +12,7 @@ mergeable:
     name: 'PR Title Convention'
     validate:
       - do: title
-        must_exclude:
+        must_include:
           regex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test):\s.+\s\[[A-Z]+-[0-9]+\]$'
     pass:
       - do: checks
