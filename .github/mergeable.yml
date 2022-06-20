@@ -1,0 +1,24 @@
+version: 2
+mergeable:
+  - when: pull_request.opened
+    name: 'Welcome'
+    validate: []
+    pass:
+      - do: comment
+        payload:
+          body: >
+            Welcome! :)
+  - when: pull_request.*
+    name: 'PR Title Convention'
+    validate:
+      - do: title
+        must_exclude:
+          regex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test):\s.+\s\[[A-Z]+-[0-9]+\]$'
+    pass:
+      - do: check
+        status: 'success'
+    fail:
+      - do: check
+        status: 'failure'
+        payload:
+          title: 'Make sure this PR title follows convention.'
