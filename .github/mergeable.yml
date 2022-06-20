@@ -14,9 +14,12 @@ mergeable:
       - do: title
         must_include:
           regex: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test):\s.+\s\[[A-Z]+-[0-9]+\]$'
+          regex_flag: 'none'
     pass:
       - do: checks
         status: 'success'
+        payload:
+          title: 'Completed!'
     fail:
       - do: checks
         status: 'failure'
